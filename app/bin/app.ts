@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from '@aws-cdk/core';
-import {AppStack} from '../lib/app-stack';
+import {KinesisConsumerStack} from '../lib/kinesis-consumer-stack';
 
 const app = new cdk.App();
-new AppStack(app, 'AppStack', {
-    env: {region: "us-east-1"},
+new KinesisConsumerStack(app, 'AppStack', {
+    env: {region: "us-east-1", account: '576208314879'},
     tags: {'billing': '123'}
 
 });
